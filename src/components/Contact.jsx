@@ -10,7 +10,7 @@ const Contact = () => {
 
     const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(
       subject
-    )}&body=${encodeURIComponent(`Message from ${name}:\n${message}`)}`;
+    )}&body=${encodeURIComponent(`Hey! I am ${name},\n${message}`)}`;
 
     window.location.href = mailtoLink;
   };
