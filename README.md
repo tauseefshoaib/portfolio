@@ -1,4 +1,4 @@
-Portfolio Link - https://tauseefshoaib.github.io/portfolio/
+Portfolio Link - tauseefshoaib.in
 
 # React + Vite
 
