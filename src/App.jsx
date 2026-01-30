@@ -1,22 +1,24 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Home from "./components/Home";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Skills from "./components/Skills";
-import { NavProvider } from "./components/context/context";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import BlogPage from "./pages/BlogPage";
+import Footer from "./components/Footer";
+import Resume from "./pages/Resume";
 
-function App() {
+export default function App() {
   return (
-    <NavProvider>
-      <div>
-        <Navbar />
-        <Home />
-        <About />
-        <Skills />
-        <Contact />
-      </div>
-    </NavProvider>
+    <div className="min-h-screen flex flex-col text-white bg-animated">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        \ <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/blog/:slug" element={<BlogPage />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
-
-export default App;

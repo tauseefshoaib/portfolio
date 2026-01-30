@@ -1,114 +1,62 @@
-import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { Link } from "react-scroll";
-import { useNav } from "./context/context";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
-const Navbar = () => {
-  const { nav, setNav } = useNav();
-  const handleClick = () => setNav(!nav);
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const linkClass = ({ isActive }) =>
+    `relative group transition block py-2 ${
+      isActive ? "text-white" : "text-neutral-400"
+    }`;
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
-      <Link to="home" smooth={true} duration={500}>
-        <h1 className=" text-2xl hover:text-pink-600">{"<tauseefShoaib/>"}</h1>
-      </Link>
-      {/* menu */}
-      <ul className="hidden md:flex">
-        <li className="hover:scale-110 duration-500  hover:text-pink-600">
-          <Link to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li className="hover:scale-110 duration-500  hover:text-pink-600">
-          <Link to="about" smooth={true} duration={500}>
-            About
-          </Link>
-        </li>
-        <li className="hover:scale-110 duration-500  hover:text-pink-600">
-          <Link to="skills" smooth={true} duration={500}>
-            Skills
-          </Link>
-        </li>
+    <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-lg border-b border-neutral-800 z-50">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <NavLink
+          to="/"
+          className="font-semibold tracking-wide text-lg hover:text-red-700"
+        >
+          {"<tauseefShoaib/>"}
+        </NavLink>
 
-        <li className="hover:scale-110 duration-500  hover:text-pink-600">
-          <Link to="contact" smooth={true} duration={500}>
-            Contact
-          </Link>
-        </li>
-      </ul>
-      {/* Hamburger */}
-      <div onClick={handleClick} className="md:hidden z-10">
-        {!nav ? <FaBars /> : <FaTimes />}
+        {/* Hamburger */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-neutral-300"
+        >
+          ☰
+        </button>
+
+        {/* Desktop */}
+        <div className="hidden md:flex gap-6 text-sm">
+          {["Home", "Blogs", "Contact", "Resume"].map((item) => (
+            <NavLink
+              key={item}
+              to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              className={linkClass}
+            >
+              {item}
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all group-hover:w-full"></span>
+            </NavLink>
+          ))}
+        </div>
       </div>
-      {/* Mobile menu */}
-      <ul
-        className={
-          !nav
-            ? "hidden"
-            : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center"
-        }
-      >
-        <li className="py-6 text-4xl hover:scale-110 duration-500  hover:text-pink-600">
-          <Link onClick={handleClick} to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li className="py-6 text-4xl hover:scale-110 duration-500  hover:text-pink-600">
-          <Link onClick={handleClick} to="about" smooth={true} duration={500}>
-            About
-          </Link>
-        </li>
-        <li className="py-6 text-4xl hover:scale-110 duration-500  hover:text-pink-600">
-          <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
-            Skills
-          </Link>
-        </li>
-        <li className="py-6 text-4xl hover:scale-110 duration-500  hover:text-pink-600">
-          <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
-            Contact
-          </Link>
-        </li>
-      </ul>
-      {/* Social icons */}
-      <div className="hidden lg:flex  fixed flex-col top-[35%] left-0">
-        <ul>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
-            <a
-              className="flex justify-between items-center w-full text-gray-300"
-              href="https://www.linkedin.com/in/tauseef-shoaib-4185151a0/"
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden bg-black/80 border-t border-neutral-800 px-6 py-4">
+          {["Home", "Blogs", "Contact", "Resume"].map((item) => (
+            <NavLink
+              key={item}
+              onClick={() => setOpen(false)}
+              to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              className={linkClass}
             >
-              Linkedin <FaLinkedin size={30} />
-            </a>
-          </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
-            <a
-              className="flex justify-between items-center w-full text-gray-300"
-              href="https://github.com/tauseefshoaib"
-            >
-              Github <FaGithub size={30} />
-            </a>
-          </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]">
-            <a
-              className="flex justify-between items-center w-full text-gray-300"
-              href="https://mail.google.com/mail/u/0/?fs=1&to=tauseefshoaib@gmail.com&tf=cm"
-            >
-              Email <HiOutlineMail size={30} />
-            </a>
-          </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]">
-            <a
-              className="flex justify-between items-center w-full text-gray-300"
-              href="https://drive.google.com/drive/folders/1Zbp59fUY0Kyoq5FeKv3wFHL2XJHZr-26?usp=sharing"
-            >
-              Resume <BsFillPersonLinesFill size={30} />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+              {item}
+            </NavLink>
+          ))}
+        </div>
+      )}
+    </nav>
   );
-};
-
-export default Navbar;
+}
