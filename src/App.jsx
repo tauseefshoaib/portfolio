@@ -9,14 +9,12 @@ export default function App() {
   return (
     <div className="bg-black text-white min-h-screen">
       <Navbar />
-      <div className="pt-16">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
