@@ -1,22 +1,19 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import Skills from "./components/Skills";
-import { NavProvider } from "./components/context/context";
+import Home from "./sections/Home";
+import Blogs from "./sections/Blogs";
+import Contact from "./sections/Contact";
+import About from "./sections/About";
 
-function App() {
+export default function App() {
   return (
-    <NavProvider>
-      <div>
-        <Navbar />
+    <div className="bg-black text-white">
+      <Navbar />
+      <main className="pt-16">
         <Home />
         <About />
-        <Skills />
+        <Blogs />
         <Contact />
-      </div>
-    </NavProvider>
+      </main>
+    </div>
   );
 }
-
-export default App;
