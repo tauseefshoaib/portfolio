@@ -7,7 +7,7 @@ export default function BlogPage() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    fetch(`/src/blogs/${slug}.md`)
+    fetch(`/blogs/${slug}.md`)
       .then((res) => res.text())
       .then((text) => setContent(marked(text)))
       .catch(() => setContent("<h1>Blog not found</h1>"));
