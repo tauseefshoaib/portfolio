@@ -12,8 +12,11 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-lg border-b border-neutral-800 z-50">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <NavLink to="/" className="font-semibold tracking-wide text-lg">
-          Tauseef Shoaib
+        <NavLink
+          to="/"
+          className="font-semibold tracking-wide text-lg hover:text-red-700"
+        >
+          {"<tauseefShoaib/>"}
         </NavLink>
 
         {/* Hamburger */}

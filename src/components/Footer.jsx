@@ -22,9 +22,26 @@ export default function Footer() {
       name: "LeetCode",
       href: "https://leetcode.com/tauseefshoaib",
       icon: (
-        <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
-          <path d="M17.2 2L9.3 12l8 10 1.5-1.3-6.6-8.7 6.7-8.7z" />
-          <path d="M10.1 14.5L5.4 12l4.7-2.5-.8-1.4L2 12l7.6 3.9.5-.4z" />
+        <svg
+          viewBox="0 0 21 21"
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <g transform="translate(2 3)">
+            <line x1="10.5" y1="0.5" x2="6.5" y2="14.5" />
+            <polyline
+              points="7.328 2.672 7.328 8.328 1.672 8.328"
+              transform="rotate(135 4.5 5.5)"
+            />
+            <polyline
+              points="15.328 6.672 15.328 12.328 9.672 12.328"
+              transform="scale(1 -1) rotate(-45 -10.435 0)"
+            />
+          </g>
         </svg>
       ),
     },
