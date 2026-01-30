@@ -1,20 +1,24 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
+import BlogPage from "./pages/BlogPage";
+import Footer from "./components/Footer";
+import Resume from "./pages/Resume";
 
 export default function App() {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="min-h-screen flex flex-col text-white bg-animated">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blogs" element={<Blogs />} />
+        \ <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/blog/:slug" element={<BlogPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
