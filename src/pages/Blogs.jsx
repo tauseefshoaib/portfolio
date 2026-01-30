@@ -1,8 +1,8 @@
 export default function Blogs() {
   return (
-    <section id="blogs" className="py-32 border-t border-neutral-900">
+    <main className="min-h-screen flex items-center">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-2xl font-semibold mb-10">Blogs</h2>
+        <h2 className="text-3xl font-semibold mb-10">Blogs</h2>
         <div className="space-y-6">
           {[1, 2, 3].map((i) => (
             <article
@@ -17,6 +17,6 @@ export default function Blogs() {
           ))}
         </div>
       </div>
-    </section>
+    </main>
   );
 }

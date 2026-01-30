@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <section id="home" className="min-h-screen flex items-center">
+    <main className="min-h-screen flex items-center">
       <div className="max-w-5xl mx-auto px-6">
         <h1 className="text-5xl md:text-6xl font-bold animate-fadeUp">
           Hi, I’m Tauseef Shoaib
@@ -13,6 +13,6 @@ export default function Home() {
           applications.
         </p>
       </div>
-    </section>
+    </main>
   );
 }

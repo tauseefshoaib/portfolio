@@ -1,19 +1,22 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./sections/Home";
-import Blogs from "./sections/Blogs";
-import Contact from "./sections/Contact";
-import About from "./sections/About";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white min-h-screen">
       <Navbar />
-      <main className="pt-16">
-        <Home />
-        <About />
-        <Blogs />
-        <Contact />
-      </main>
+      <div className="pt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
     </div>
   );
 }
