@@ -18,7 +18,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="flex flex-1 items-center pt-20 animate-page-fade">
+    <main className="flex flex-1 items-center pt-20 animate-pageFade">
       <div className="max-w-3xl mx-auto px-6 w-full">
         <h2 className="text-3xl font-semibold mb-4 tracking-tight">Contact</h2>
 

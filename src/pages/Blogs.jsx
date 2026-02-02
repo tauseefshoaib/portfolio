@@ -7,7 +7,7 @@ export default function Blogs() {
   ];
 
   return (
-    <main className="min-h-screen pt-28 animate-page-fade">
+    <main className="min-h-screen pt-28 animate-pageFade">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-semibold mb-10 tracking-tight">Blogs</h2>
 

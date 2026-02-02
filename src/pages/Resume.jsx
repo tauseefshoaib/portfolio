@@ -12,7 +12,7 @@ export default function Resume() {
   };
 
   return (
-    <main className="flex flex-1 pt-24 pb-10 text-white animate-page-fade">
+    <main className="flex flex-1 pt-24 pb-10 text-white animate-pageFade">
       <div className="max-w-4xl mx-auto px-6 w-full">
         {/* Technical Skills */}
         <section className="mb-10">
