@@ -18,7 +18,7 @@ export default function Navbar() {
           to="/"
           className="font-semibold tracking-wide text-lg hover:text-red-700"
         >
-          {"<tauseefShoaib/>"}
+          {"<TauseefShoaib/>"}
         </NavLink>
 
         {/* Hamburger */}
@@ -39,9 +39,7 @@ export default function Navbar() {
               end={item === "Home"}
               className={({ isActive }) =>
                 linkClass(
-                  item === "Blogs"
-                    ? pathname.startsWith("/blog")
-                    : isActive
+                  item === "Blogs" ? pathname.startsWith("/blog") : isActive,
                 )
               }
             >
@@ -63,9 +61,7 @@ export default function Navbar() {
               end={item === "Home"}
               className={({ isActive }) =>
                 linkClass(
-                  item === "Blogs"
-                    ? pathname.startsWith("/blog")
-                    : isActive
+                  item === "Blogs" ? pathname.startsWith("/blog") : isActive,
                 )
               }
             >
