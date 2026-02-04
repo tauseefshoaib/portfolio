@@ -1,6 +1,26 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 export default function Blogs() {
+  const itemRefs = useRef([]);
+  const [visible, setVisible] = useState({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const key = entry.target.getAttribute("data-key");
+          if (!key) return;
+          setVisible((prev) => ({ ...prev, [key]: entry.isIntersecting }));
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    itemRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const posts = [
     {
       title: "Memoization in React: When It Helps (And When It Hurts)",
@@ -140,11 +160,19 @@ export default function Blogs() {
     <main className="min-h-screen pt-28 animate-pageFade">
       <div className="max-w-5xl mx-auto px-6">
         <div className="space-y-6">
-          {posts.map((p) => (
+          {posts.map((p, index) => (
             <Link
               key={p.slug}
               to={`/blog/${p.slug}`}
-              className="flex items-start justify-between gap-6 p-6 rounded-xl bg-neutral-950 border border-neutral-800 hover:bg-neutral-900 transition-transform duration-200 hover:scale-[1.02]"
+              data-key={p.slug}
+              ref={(el) => {
+                itemRefs.current[index] = el;
+              }}
+              className={`flex items-start justify-between gap-6 p-6 rounded-xl bg-neutral-950 border border-neutral-800 hover:bg-neutral-900 transition-[transform,opacity] duration-600 ease-out origin-center ${
+                visible[p.slug]
+                  ? "opacity-100 scale-x-100"
+                  : "opacity-0 scale-x-[0.9]"
+              }`}
             >
               <div>
                 <h3 className="text-lg font-medium">{p.title}</h3>
