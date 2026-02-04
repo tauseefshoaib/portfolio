@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function Blogs() {
   const posts = [
-    { title: "My First Blog", slug: "blog1" },
-    { title: "Second Article", slug: "blog2" },
+    { title: "Memoization in React: When It Helps (And When It Hurts)", slug: "blog1" },
+    { title: "Frontend Optimization Playbook: Measurable Wins", slug: "blog2" },
   ];
 
   return (

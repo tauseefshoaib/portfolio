@@ -1,17 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
-  const linkClass = ({ isActive }) =>
+  const linkClass = (active) =>
     `relative group transition block py-2 ${
-      isActive ? "text-white" : "text-neutral-400"
+      active ? "text-white" : "text-neutral-400"
     }`;
 
   return (
-    <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-lg border-b border-neutral-800 z-50">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+      <div className="w-[min(92vw,960px)] px-6 h-16 flex items-center justify-between rounded-3xl bg-black/70 backdrop-blur-xl border border-neutral-800 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
         <NavLink
           to="/"
           className="font-semibold tracking-wide text-lg hover:text-red-700"
@@ -22,9 +24,10 @@ export default function Navbar() {
         {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-neutral-300"
+          className="md:hidden text-neutral-300 hover:text-white transition"
+          aria-label="Toggle menu"
         >
-          ☰
+          <HiOutlineMenuAlt3 className="h-6 w-6" />
         </button>
 
         {/* Desktop */}
@@ -33,7 +36,14 @@ export default function Navbar() {
             <NavLink
               key={item}
               to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-              className={linkClass}
+              end={item === "Home"}
+              className={({ isActive }) =>
+                linkClass(
+                  item === "Blogs"
+                    ? pathname.startsWith("/blog")
+                    : isActive
+                )
+              }
             >
               {item}
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all group-hover:w-full"></span>
@@ -44,13 +54,20 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-black/80 border-t border-neutral-800 px-6 py-4">
+        <div className="md:hidden mt-2 bg-black/80 border border-neutral-800 rounded-3xl px-6 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl">
           {["Home", "Blogs", "Contact", "Resume"].map((item) => (
             <NavLink
               key={item}
               onClick={() => setOpen(false)}
               to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-              className={linkClass}
+              end={item === "Home"}
+              className={({ isActive }) =>
+                linkClass(
+                  item === "Blogs"
+                    ? pathname.startsWith("/blog")
+                    : isActive
+                )
+              }
             >
               {item}
             </NavLink>
