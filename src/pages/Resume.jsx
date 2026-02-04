@@ -53,19 +53,19 @@ export default function Resume() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4">
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition-transform duration-200 hover:scale-[1.02]">
               <h3 className="text-sm font-semibold text-white">Languages</h3>
               <p className="text-sm text-neutral-400 mt-2">
                 JavaScript, TypeScript
               </p>
             </div>
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4">
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition-transform duration-200 hover:scale-[1.02]">
               <h3 className="text-sm font-semibold text-white">Frameworks</h3>
               <p className="text-sm text-neutral-400 mt-2">
                 React Native, React.js
               </p>
             </div>
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4">
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition-transform duration-200 hover:scale-[1.02]">
               <h3 className="text-sm font-semibold text-white">
                 Developer Tools
               </h3>
@@ -74,7 +74,7 @@ export default function Resume() {
                 Crashlytics
               </p>
             </div>
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4">
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition-transform duration-200 hover:scale-[1.02]">
               <h3 className="text-sm font-semibold text-white">Libraries</h3>
               <p className="text-sm text-neutral-400 mt-2">
                 Redux Toolkit, Styled Components, Jest, Storybook, Reanimated,
@@ -106,7 +106,7 @@ export default function Resume() {
                             : "md:col-start-2 md:pl-8"
                         }
                       >
-                        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-6 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+                        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-6 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition-transform duration-200 hover:scale-[1.02]">
                           <h3 className="text-lg font-semibold text-white">
                             {exp.role}
                           </h3>
@@ -151,7 +151,7 @@ export default function Resume() {
                             : "md:col-start-2 md:pl-8"
                         }
                       >
-                        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-6 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+                        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-6 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition-transform duration-200 hover:scale-[1.02]">
                           <h3 className="text-lg font-semibold text-white">
                             {edu.school}
                           </h3>
