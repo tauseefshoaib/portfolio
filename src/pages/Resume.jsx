@@ -1,153 +1,181 @@
 export default function Resume() {
-  const downloadResume = () => {
-    fetch("Resume.pdf").then((res) => {
-      res.blob().then((blob) => {
-        const resumeUrl = window.URL.createObjectURL(blob);
-        let alink = document.createElement("a");
-        alink.href = resumeUrl;
-        alink.download = "Resume.pdf";
-        alink.click();
-      });
-    });
-  };
+  const experiences = [
+    {
+      role: "Software Engineer L2",
+      company: "Codinova Technologies",
+      period: "Feb 2024 – Present • Hybrid",
+      bullets: [
+        "Developed core features for a major Danish finance app using React Native.",
+        "Reduced dashboard load by 50% through performance optimization.",
+        "Led monorepo setup, POCs, and tooling decisions.",
+        "Maintained Storybook and full Jest testing suite.",
+        "Served as client-facing dev & mentored juniors.",
+      ],
+    },
+    {
+      role: "Software Engineer",
+      company: "Zarif Quest International Pvt Ltd",
+      period: "Apr 2022 – Jan 2024 • Remote",
+      bullets: [
+        "Built a full React Native application using Styled Components.",
+        "Integrated APIs using Redux Toolkit + Redux Saga.",
+        "Optimized performance via lazy loading & code-splitting.",
+      ],
+    },
+    {
+      role: "Software Trainee",
+      company: "Codetru",
+      period: "Jan 2022 – Mar 2022 • Hyderabad",
+      bullets: ["Worked on a Flutter app utilizing BLoC architecture."],
+    },
+  ];
+
+  const education = [
+    {
+      school: "Jamia Hamdard University",
+      program: "BCA (8.85 CGPA)",
+      period: "2018 – 2021 • Delhi",
+    },
+    {
+      school: "Salwan Boys Sr. Sec. School",
+      program: "Science Stream",
+      period: "2016 – 2018 • Delhi",
+    },
+  ];
 
   return (
     <main className="flex flex-1 pt-24 pb-10 text-white animate-pageFade">
       <div className="max-w-4xl mx-auto px-6 w-full">
         {/* Technical Skills */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-neutral-800 pb-2">
+        <section className="mt-6 mb-20">
+          <h2 className="text-3xl font-semibold mb-8 tracking-tight">
             Technical Skills
           </h2>
 
-          <ul className="text-neutral-400 space-y-2 text-sm">
-            <li>
-              <strong className="text-white">Languages:</strong> JavaScript,
-              TypeScript
-            </li>
-            <li>
-              <strong className="text-white">Frameworks:</strong> React Native,
-              React.js
-            </li>
-            <li>
-              <strong className="text-white">Developer Tools:</strong> Git, VS
-              Code, XCode, Android Studio, Azure DevOps, Firebase Crashlytics
-            </li>
-            <li>
-              <strong className="text-white">Libraries:</strong> Redux Toolkit,
-              Styled Components, Jest, Storybook, Reanimated, Turborepo
-            </li>
-          </ul>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition-transform duration-200 hover:scale-[1.02]">
+              <h3 className="text-sm font-semibold text-white">Languages</h3>
+              <p className="text-sm text-neutral-400 mt-2">
+                JavaScript, TypeScript
+              </p>
+            </div>
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition-transform duration-200 hover:scale-[1.02]">
+              <h3 className="text-sm font-semibold text-white">Frameworks</h3>
+              <p className="text-sm text-neutral-400 mt-2">
+                React Native, React.js
+              </p>
+            </div>
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition-transform duration-200 hover:scale-[1.02]">
+              <h3 className="text-sm font-semibold text-white">
+                Developer Tools
+              </h3>
+              <p className="text-sm text-neutral-400 mt-2">
+                Git, VS Code, XCode, Android Studio, Azure DevOps, Firebase
+                Crashlytics
+              </p>
+            </div>
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition-transform duration-200 hover:scale-[1.02]">
+              <h3 className="text-sm font-semibold text-white">Libraries</h3>
+              <p className="text-sm text-neutral-400 mt-2">
+                Redux Toolkit, Styled Components, Jest, Storybook, Reanimated,
+                Turborepo
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Experience */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-neutral-800 pb-2">
+        <section className="mb-24">
+          <h2 className="text-3xl font-semibold mb-8 tracking-tight">
             Experience
           </h2>
 
-          {/* Job 1 */}
-          <div className="mb-6">
-            <div className="flex justify-between items-baseline">
-              <div>
-                <h3 className="text-lg font-semibold text-white">
-                  Codinova Technologies
-                </h3>
-                <p className="text-neutral-400 text-sm">Software Engineer L2</p>
-              </div>
-              <p className="text-neutral-500 text-xs italic">
-                Feb 2024 – Present • Hybrid
-              </p>
-            </div>
-
-            <ul className="list-disc pl-5 mt-3 text-neutral-400 space-y-2 text-sm">
-              <li>
-                Developed core features for a major Danish finance app using
-                React Native.
-              </li>
-              <li>
-                Reduced dashboard load by 50% through performance optimization.
-              </li>
-              <li>Led monorepo setup, POCs, and tooling decisions.</li>
-              <li>Maintained Storybook and full Jest testing suite.</li>
-              <li>Served as client-facing dev & mentored juniors.</li>
-            </ul>
-          </div>
-
-          {/* Job 2 */}
-          <div className="mb-6">
-            <div className="flex justify-between items-baseline">
-              <div>
-                <h3 className="text-lg font-semibold text-white">
-                  Zarif Quest International Pvt Ltd
-                </h3>
-                <p className="text-neutral-400 text-sm">Software Engineer</p>
-              </div>
-              <p className="text-neutral-500 text-xs italic">
-                Apr 2022 – Jan 2024 • Remote
-              </p>
-            </div>
-
-            <ul className="list-disc pl-5 mt-3 text-neutral-400 space-y-2 text-sm">
-              <li>
-                Built a full React Native application using Styled Components.
-              </li>
-              <li>Integrated APIs using Redux Toolkit + Redux Saga.</li>
-              <li>Optimized performance via lazy loading & code-splitting.</li>
-            </ul>
-          </div>
-
-          {/* Job 3 */}
-          <div className="mb-6">
-            <div className="flex justify-between items-baseline">
-              <div>
-                <h3 className="text-lg font-semibold text-white">Codetru</h3>
-                <p className="text-neutral-400 text-sm">Software Trainee</p>
-              </div>
-              <p className="text-neutral-500 text-xs italic">
-                Jan 2022 – Mar 2022 • Hyderabad
-              </p>
-            </div>
-
-            <ul className="list-disc pl-5 mt-3 text-neutral-400 space-y-2 text-sm">
-              <li>Worked on a Flutter app utilizing BLoC architecture.</li>
+          <div className="relative">
+            <div className="absolute left-1/2 top-6 bottom-6 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+            <ul className="space-y-10">
+              {experiences.map((exp, index) => {
+                const left = index % 2 === 0;
+                return (
+                  <li key={exp.role} className="relative">
+                    <div className="absolute left-1/2 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.35)] md:block" />
+                    <div className="grid gap-6 md:grid-cols-2">
+                      <div
+                        className={
+                          left
+                            ? "md:pr-8 md:text-right"
+                            : "md:col-start-2 md:pl-8"
+                        }
+                      >
+                        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-6 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition-transform duration-200 hover:scale-[1.02]">
+                          <h3 className="text-lg font-semibold text-white">
+                            {exp.role}
+                          </h3>
+                          <p className="text-sm text-neutral-300 mt-1">
+                            {exp.company}
+                          </p>
+                          <p className="text-xs text-neutral-400 mt-1">
+                            {exp.period}
+                          </p>
+                          <p className="mt-4 text-neutral-400 text-sm leading-relaxed">
+                            {exp.bullets.join(" ")}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
 
         {/* Education */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4 border-b border-neutral-800 pb-2">
+          <h2 className="text-3xl font-semibold mb-8 tracking-tight">
             Education
           </h2>
 
-          <div className="mb-4">
-            <h3 className="text-lg font-semibold text-white">
-              Jamia Hamdard University
-            </h3>
-            <p className="text-neutral-400 text-sm">BCA (8.85 CGPA)</p>
-            <p className="text-neutral-500 text-xs italic">
-              2018 – 2021 • Delhi
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-white">
-              Salwan Boys Sr. Sec. School
-            </h3>
-            <p className="text-neutral-400 text-sm">Science Stream</p>
-            <p className="text-neutral-500 text-xs italic">
-              2016 – 2018 • Delhi
-            </p>
+          <div className="relative">
+            <div className="absolute left-1/2 top-6 bottom-6 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+            <ul className="space-y-10">
+              {education.map((edu, index) => {
+                const left = index % 2 === 0;
+                return (
+                  <li key={edu.school} className="relative">
+                    <div className="absolute left-1/2 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.35)] md:block" />
+                    <div className="grid gap-6 md:grid-cols-2">
+                      <div
+                        className={
+                          left
+                            ? "md:pr-8 md:text-right"
+                            : "md:col-start-2 md:pl-8"
+                        }
+                      >
+                        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 px-6 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition-transform duration-200 hover:scale-[1.02]">
+                          <h3 className="text-lg font-semibold text-white">
+                            {edu.school}
+                          </h3>
+                          <p className="text-sm text-neutral-300 mt-1">
+                            {edu.program}
+                          </p>
+                          <p className="text-xs text-neutral-400 mt-1">
+                            {edu.period}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </section>
 
         {/* Buttons */}
-        <div className="mt-10 flex justify-center gap-6 flex-wrap">
-          {/* Download */}
+        <div className="mt-10 flex justify-center">
           <button
-            onClick={downloadResume}
-            className="flex items-center gap-2 px-5 py-2 border border-neutral-700 rounded-md hover:bg-white hover:text-black transition"
+            onClick={() => window.open("/Resume.pdf", "_blank")}
+            className="flex items-center gap-2 px-8 py-2 border border-neutral-700 rounded-md hover:bg-white hover:text-black transition min-w-[180px] justify-center"
           >
             <svg
               className="w-4 h-4"
@@ -164,34 +192,6 @@ export default function Resume() {
               <path d="M4 21h16" strokeLinecap="round" />
             </svg>
             Download PDF
-          </button>
-
-          {/* View */}
-          <button
-            onClick={() => window.open("/Resume.pdf", "_blank")}
-            className="flex items-center gap-2 px-5 py-2 border border-neutral-700 rounded-md hover:bg-white hover:text-black transition"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                r="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            View PDF
           </button>
         </div>
       </div>
