@@ -16,7 +16,7 @@ export default function Blogs() {
             <Link
               key={p.slug}
               to={`/blog/${p.slug}`}
-              className="block p-6 rounded-xl bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 transition"
+              className="block p-6 rounded-xl bg-neutral-950 border border-neutral-800 hover:bg-neutral-900 transition"
             >
               <h3 className="text-lg font-medium">{p.title}</h3>
               <p className="text-neutral-400 text-sm mt-2">Click to read →</p>
