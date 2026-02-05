@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function Socials({ className = "" }) {
   const socials = [
     {
@@ -76,3 +78,7 @@ export default function Socials({ className = "" }) {
     </div>
   );
 }
+
+Socials.propTypes = {
+  className: PropTypes.string,
+};

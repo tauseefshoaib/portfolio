@@ -91,13 +91,33 @@ export default function ResumeSection() {
           </h2>
 
           <div className="relative">
-            <div className="absolute left-1/2 top-6 bottom-6 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
             <ul className="space-y-10">
               {experiences.map((exp, index) => {
                 const left = index % 2 === 0;
+                const isFirst = index === 0;
+                const isLast = index === experiences.length - 1;
+                const dotPositionClass = isFirst
+                  ? "top-6"
+                  : isLast
+                    ? "bottom-6"
+                    : "top-1/2 -translate-y-1/2";
                 return (
                   <li key={exp.role} className="relative">
-                    <div className="absolute left-1/2 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.35)] md:block" />
+                    {!isFirst && (
+                      <div className="absolute left-1/2 -top-5 bottom-1/2 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+                    )}
+                    {!isLast && (
+                      <div className="absolute left-1/2 top-1/2 -bottom-5 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+                    )}
+                    {isFirst && (
+                      <div className="absolute left-1/2 top-6 -bottom-5 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+                    )}
+                    {isLast && (
+                      <div className="absolute left-1/2 -top-5 bottom-6 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+                    )}
+                    <div
+                      className={`absolute left-1/2 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.35)] md:block ${dotPositionClass}`}
+                    />
                     <div className="grid gap-6 md:grid-cols-2">
                       <div
                         className={
@@ -136,13 +156,33 @@ export default function ResumeSection() {
           </h2>
 
           <div className="relative">
-            <div className="absolute left-1/2 top-6 bottom-6 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
             <ul className="space-y-10">
               {education.map((edu, index) => {
                 const left = index % 2 === 0;
+                const isFirst = index === 0;
+                const isLast = index === education.length - 1;
+                const dotPositionClass = isFirst
+                  ? "top-6"
+                  : isLast
+                    ? "bottom-6"
+                    : "top-1/2 -translate-y-1/2";
                 return (
                   <li key={edu.school} className="relative">
-                    <div className="absolute left-1/2 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.35)] md:block" />
+                    {!isFirst && (
+                      <div className="absolute left-1/2 -top-5 bottom-1/2 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+                    )}
+                    {!isLast && (
+                      <div className="absolute left-1/2 top-1/2 -bottom-5 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+                    )}
+                    {isFirst && (
+                      <div className="absolute left-1/2 top-6 -bottom-5 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+                    )}
+                    {isLast && (
+                      <div className="absolute left-1/2 -top-5 bottom-6 hidden w-px -translate-x-1/2 bg-neutral-700 md:block" />
+                    )}
+                    <div
+                      className={`absolute left-1/2 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.35)] md:block ${dotPositionClass}`}
+                    />
                     <div className="grid gap-6 md:grid-cols-2">
                       <div
                         className={
