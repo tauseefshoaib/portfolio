@@ -157,7 +157,7 @@ export default function Blogs() {
   ];
 
   return (
-    <main className="min-h-screen pt-28 animate-pageFade">
+    <main className="min-h-screen pt-32 pb-10 animate-pageFade">
       <div className="max-w-5xl mx-auto px-6">
         <div className="space-y-6">
           {posts.map((p, index) => (

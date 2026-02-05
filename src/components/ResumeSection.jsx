@@ -1,9 +1,9 @@
-export default function Resume() {
+export default function ResumeSection() {
   const experiences = [
     {
       role: "Software Engineer L2",
       company: "Codinova Technologies",
-      period: "Feb 2024 – Present • Hybrid",
+      period: "Feb 2024 - Present - Hybrid",
       bullets: [
         "Developed core features for a major Danish finance app using React Native.",
         "Reduced dashboard load by 50% through performance optimization.",
@@ -15,7 +15,7 @@ export default function Resume() {
     {
       role: "Software Engineer",
       company: "Zarif Quest International Pvt Ltd",
-      period: "Apr 2022 – Jan 2024 • Remote",
+      period: "Apr 2022 - Jan 2024 - Remote",
       bullets: [
         "Built a full React Native application using Styled Components.",
         "Integrated APIs using Redux Toolkit + Redux Saga.",
@@ -25,7 +25,7 @@ export default function Resume() {
     {
       role: "Software Trainee",
       company: "Codetru",
-      period: "Jan 2022 – Mar 2022 • Hyderabad",
+      period: "Jan 2022 - Mar 2022 - Hyderabad",
       bullets: ["Worked on a Flutter app utilizing BLoC architecture."],
     },
   ];
@@ -34,20 +34,20 @@ export default function Resume() {
     {
       school: "Jamia Hamdard University",
       program: "BCA (8.85 CGPA)",
-      period: "2018 – 2021 • Delhi",
+      period: "2018 - 2021 - Delhi",
     },
     {
       school: "Salwan Boys Sr. Sec. School",
       program: "Science Stream",
-      period: "2016 – 2018 • Delhi",
+      period: "2016 - 2018 - Delhi",
     },
   ];
 
   return (
-    <main className="flex flex-1 pt-24 pb-10 text-white animate-pageFade">
+    <section className="flex pb-10 text-white animate-pageFade">
       <div className="max-w-4xl mx-auto px-6 w-full">
         {/* Technical Skills */}
-        <section className="mt-6 mb-20">
+        <div className="mt-6 mb-20">
           <h2 className="text-3xl font-semibold mb-8 tracking-tight">
             Technical Skills
           </h2>
@@ -82,10 +82,10 @@ export default function Resume() {
               </p>
             </div>
           </div>
-        </section>
+        </div>
 
         {/* Experience */}
-        <section className="mb-24">
+        <div className="mb-24">
           <h2 className="text-3xl font-semibold mb-8 tracking-tight">
             Experience
           </h2>
@@ -127,10 +127,10 @@ export default function Resume() {
               })}
             </ul>
           </div>
-        </section>
+        </div>
 
         {/* Education */}
-        <section>
+        <div>
           <h2 className="text-3xl font-semibold mb-8 tracking-tight">
             Education
           </h2>
@@ -169,7 +169,7 @@ export default function Resume() {
               })}
             </ul>
           </div>
-        </section>
+        </div>
 
         {/* Buttons */}
         <div className="mt-10 flex justify-center">
@@ -191,10 +191,10 @@ export default function Resume() {
               />
               <path d="M4 21h16" strokeLinecap="round" />
             </svg>
-            Download PDF
+            Download Resume
           </button>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
