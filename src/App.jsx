@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import BlogPage from "./pages/BlogPage";
 import Footer from "./components/Footer";
-import Resume from "./pages/Resume";
 
 export default function App() {
   return (
@@ -13,7 +12,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/resume" element={<Resume />} />
         <Route path="/blog/:slug" element={<BlogPage />} />
       </Routes>
       <Footer />
