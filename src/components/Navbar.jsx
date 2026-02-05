@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
-      <div className="w-[min(92vw,960px)] px-6 h-16 flex items-center justify-between rounded-3xl bg-transparent backdrop-blur-2xl border border-white/5 shadow-[0_14px_40px_rgba(0,0,0,0.45)]">
+      <div className="w-[min(92vw,850px)] px-6 h-16 flex items-center justify-between rounded-3xl bg-transparent backdrop-blur-2xl border border-white/5 shadow-[0_14px_40px_rgba(0,0,0,0.45)]">
         <NavLink
           to="/"
           className="font-semibold tracking-wide text-lg hover:text-red-700"
@@ -31,7 +31,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop */}
-        <div className="hidden md:flex gap-6 text-sm">
+        <div className="hidden md:flex gap-6 text-md">
           {["Home", "Blogs"].map((item) => (
             <NavLink
               key={item}
@@ -52,7 +52,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden mt-2 bg-transparent rounded-3xl px-6 py-4 border border-white/5 shadow-[0_14px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+        <div className="md:hidden mt-2 bg-transparent rounded-3xl px-6 py-4 border border-white/5 shadow-[0_14px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl w-[min(92vw,840px)] mx-auto">
           {["Home", "Blogs"].map((item) => (
             <NavLink
               key={item}
